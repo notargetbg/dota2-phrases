@@ -70,13 +70,28 @@ class SiteController extends Controller
             $id = $request->post('id');
             $model = Phrases::findOne($id);
 
-            $model->likes = $model->likes + 1;
+            // get the cookie collection (yii\web\CookieCollection) from the "response" component
+            $cookies = Yii::$app->response->cookies;
 
+            if (!isset($request->cookies[ $id.'_already_liked'] )) {
+                // add a new cookie to the response to be sent
+                $cookies->add(new \yii\web\Cookie([
+                    'name' => $id.'_already_liked',
+                    'value' => 1,
+                    'expire' => time()+60*60*24*30
+                ]));
 
-            $model->save();
-            return $model->likes;
+                $model->likes = $model->likes + 1;
+
+                $model->save();
+                return $model->likes;
+
+            } else {
+                return $model->likes;
+            }
         }
     }
+
 
     public function actionLogin()
     {
