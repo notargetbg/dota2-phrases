@@ -1,0 +1,25 @@
+{
+	"name": "pahanini/yii2-curl",
+	"description": "A Yii2 cURL library with support of multiple requests in parallel",
+	"keywords": ["yii2", "curl"],
+	"homepage": "https://github.com/pahanini/yii2-curl",
+	"type": "yii2-extension",
+	"minimum-stability": "dev",
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Pavel Tetyaev",
+			"email": "pahanini@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0",
+		"ext-curl": "*",
+		"yiisoft/yii2": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"pahanini\\curl\\": ""
+		}
+	}
+}

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "pahanini/yii2-curl": "^1.7"
+    }
+}
