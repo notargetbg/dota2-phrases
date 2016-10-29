@@ -11,6 +11,7 @@ body {
 }
 .wrap.index-page {
     background-image: url('../img/troll-bg.jpg');
+    background-attachment: fixed;
 }
 
 .wrap > .container {
