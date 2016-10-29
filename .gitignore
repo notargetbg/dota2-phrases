@@ -23,3 +23,5 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
+// Db Config
+/config/db.php
