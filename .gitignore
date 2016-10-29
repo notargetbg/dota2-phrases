@@ -24,4 +24,4 @@ phpunit.phar
 /phpunit.xml
 
 # Db Config
-/config/db.php
+db.php
