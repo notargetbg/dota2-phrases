@@ -78,7 +78,7 @@ class SiteController extends Controller
                 $cookies->add(new \yii\web\Cookie([
                     'name' => $id.'_already_liked',
                     'value' => 1,
-                    'expire' => time()+60*60*24*30
+                    'expire' => time()+60*60*24*30*120
                 ]));
 
                 $model->likes = $model->likes + 1;
