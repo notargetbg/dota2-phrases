@@ -59,6 +59,7 @@ class SiteController extends Controller
 
         return $this->render('index', [
             'phrases' => Phrases::find()->all(),
+            'most_liked_phrase' => Phrases::find()->orderBy(['likes'=>SORT_DESC])->one()
         ]);
     }
 

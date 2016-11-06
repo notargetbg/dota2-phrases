@@ -17,14 +17,22 @@ $this->title = 'Фрази, водещи до смърт в Dota2';
 
 
 ?>
-
-
 <div class="site-index">
     <div class="jumbotron">
         <h1>Фрази, водещи до смърт в Dota2</h1>
     </div>
 
     <div class="body-content">
+
+        <div class="well">
+<!--            --><?php //echo Html::img('img/aegis-of-champions.png', ['style' => 'max-width: 50px; margin-right: 25px;']) ?>
+            <blockquote>
+                <h2>
+                    "<?php print_r( $most_liked_phrase->phrase ); ?>"
+                </h2>
+            </blockquote>
+        </div>
+
 
         <ul class="list-group">
 

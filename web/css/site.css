@@ -1,3 +1,8 @@
+@font-face {
+    font-family: evilghost;
+    src: url('../fonts/mb-evilghost.ttf');
+}
+
 html,
 body {
     height: 100%;
@@ -37,13 +42,32 @@ body {
 
 .jumbotron h1, .jumbotron .h1 {
     color: #b74d4f;
-    text-shadow: 0 1px 3px #1f1f1f;
+    text-shadow: 0 3px 3px #1f1f1f;
+    font-family: 'evilghost', sans-serif, arial;
 }
 
 
 .not-set {
     color: #c55;
     font-style: italic;
+}
+/*http://i45.tinypic.com/35idevo.png*/
+.wrap .well {
+    background-image: url('../img/giphy.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+    background-position-x: right;
+    border-color: #dddddd;
+}
+.wrap .well blockquote {
+    border-color: rgb(183, 77, 79);
+}
+
+.wrap .well h2 {
+    font-size: 38px;
+    font-family: 'evilghost', sans-serif, arial;
+    color: #b74d4f;
 }
 
 /* add sorting icons to gridview sort links */
