@@ -27,6 +27,7 @@ $this->title = 'Фрази, водещи до смърт в Dota2';
         <div class="well">
 <!--            --><?php //echo Html::img('img/aegis-of-champions.png', ['style' => 'max-width: 50px; margin-right: 25px;']) ?>
             <blockquote>
+                <small>Топ фраза:</small>
                 <h2>
                     "<?php print_r( $most_liked_phrase->phrase ); ?>"
                 </h2>
@@ -37,7 +38,7 @@ $this->title = 'Фрази, водещи до смърт в Dota2';
         <ul class="list-group">
 
            <?php $index = 1; foreach ($phrases as $phrase) : ?>
-            <li id="<?php echo $phrase->ID ?>" class="list-group-item">
+            <li id="<?php echo $phrase->ID ?>" class="list-group-item" data-toggle="tooltip" data-placement="left" title="<?php echo $phrase->created; ?>">
                 <span class="pull-left phrase-index"><?php echo $index."."; ?></span>
                 <span class="badge like-count"><?php print_r($phrase->likes); ?></span>
                 <span class="pull-right glyphicon glyphicon-thumbs-up like" onClick="cwRating(<?php echo $phrase->ID; ?>,1)"></span>
@@ -53,24 +54,11 @@ $this->title = 'Фрази, водещи до смърт в Dota2';
 </div>
 
 <script
-    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    src=""
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
     crossorigin="anonymous"></script>
 <script>
-    function cwRating(id){
-        $.ajax({
-            type:'POST',
-            url:'?r=site/like',
-            data:'id='+id,
-            success:function(msg){
-                if(msg == 'err'){
-                    alert('Some problem occured, please try again.');
-                }else{
-                    $('#'+id + ' ' + '.badge').html(msg);
-                }
-            }
-        });
-    }
+
 </script>
 
 </script>

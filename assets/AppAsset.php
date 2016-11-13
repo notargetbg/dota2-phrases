@@ -19,11 +19,17 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+        'css/animate.css'
     ];
     public $js = [
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineMax.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js',
+        'js/main.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
     ];
 }
