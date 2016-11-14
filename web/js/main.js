@@ -25,7 +25,8 @@ $(function () {
     var jumbotron_h1 = $('.jumbotron h1'),
         list_group_li = $('.list-group li'),
         well = $('.body-content > .well'),
-        nav = $('nav');
+        nav = $('nav'),
+        footer = $('.footer');
 
     tl
         .from(nav, 0.5, {autoAlpha: 0})
@@ -34,7 +35,8 @@ $(function () {
         .from(well, 0.5, {autoAlpha: 0, bottom: 50},"+=1")
         //.to(well, 0.5, {autoAlpha: 0},"+=5")
         //.set(well, {display: 'none'})
-        .staggerFrom(list_group_li, 0.5, {display: 'none', bottom: 10, opacity:0, delay:0.2, ease:Power2.easeOut, force3D:true}, 1 , "+=1");
+        .staggerFrom(list_group_li, 0.5, {display: 'none', bottom: 10, opacity:0, delay:0.2, ease:Power2.easeOut, force3D:true}, 1 , "+=1")
+        .from(footer, 0.5, {autoAlpha: 0, bottom: 20});
 
     // Custom hover effect;
     list_group_li.hover(

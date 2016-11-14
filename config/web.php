@@ -6,6 +6,11 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    // set target language to be BG
+    'language' => 'bg-BG',
+
+    // set source language to be English
+    'sourceLanguage' => 'en-US',
 
     'components' => [
         'request' => [

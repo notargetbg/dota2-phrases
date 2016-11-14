@@ -6,6 +6,8 @@ use yii\helpers\StringHelper;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 
+$formatter = \Yii::$app->formatter;
+
 
 
 
@@ -14,6 +16,7 @@ use yii\widgets\Pjax;
 
 $this->registerMetaTag(['name' => 'keywords', 'content' => 'фрази, смърт , Dota2']);
 $this->title = 'Фрази, водещи до смърт в Dota2';
+
 
 
 ?>
@@ -36,9 +39,13 @@ $this->title = 'Фрази, водещи до смърт в Dota2';
 
 
         <ul class="list-group">
+            <?php
+            // Save $vars here
+            $index = 1;
+            ?>
 
-           <?php $index = 1; foreach ($phrases as $phrase) : ?>
-            <li id="<?php echo $phrase->ID ?>" class="list-group-item" data-toggle="tooltip" data-placement="left" title="<?php echo $phrase->created; ?>">
+           <?php foreach ($phrases as $phrase) : ?>
+            <li id="<?php echo $phrase->ID ?>" class="list-group-item" data-toggle="tooltip" data-placement="left" title="<?php echo $formatter->asDate($phrase->created, 'long'); ?>">
                 <span class="pull-left phrase-index"><?php echo $index."."; ?></span>
                 <span class="badge like-count"><?php print_r($phrase->likes); ?></span>
                 <span class="pull-right glyphicon glyphicon-thumbs-up like" onClick="cwRating(<?php echo $phrase->ID; ?>,1)"></span>
